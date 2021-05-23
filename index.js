@@ -169,7 +169,14 @@ function olderMovie(){
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
 */
-
+function countMovies(){
+  
+  for(i = 0; i<movies.length;i++){
+      
+  }
+    return sum = i 
+  }
+ 
 
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
