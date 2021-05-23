@@ -153,11 +153,23 @@ function deleteProp(a,b){
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end of this file.
 */
+function olderMovie(){
+    let lowest = Number.POSITIVE_INFINITY
+    let highest = Number.NEGATIVE_INFINITY
+    movies.sort((a, b) => a.Year - b.Year)
+        for (let i = 0; i <movies.length;i++) {
+           
+            return movies[i].Year < lowest? `${lowest = "the oldest movies is " +" "+ movies[i].Title  +" from "+  movies[i].Year }`:` ${highest = "the most recent movie released is" + movies[i].Title +" from "+ movies[i].Year}`
+        
+        }
+        
+        }
 
 
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
 */
+
 
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
@@ -331,15 +343,4 @@ const movies = [
 
 
 
-function olderMovie(){
-let lowest = Number.POSITIVE_INFINITY
-let highest = Number.NEGATIVE_INFINITY
-movies.sort((a, b) => a.Year - b.Year)
-    for (let i = 0; i <movies.length;i++) {
-       
-        return movies[i].Year < lowest? `${lowest = "the oldest movies is " +" "+ movies[i].Title  +" from "+  movies[i].Year }`:` ${highest = "the most recent movie released is" + movies[i].Title +" from "+ movies[i].Year}`
-    
-    }
-    
-    }
-console.log(olderMovie())
+
