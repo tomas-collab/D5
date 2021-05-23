@@ -147,10 +147,13 @@ function isTodayMyBirthday(){
 /* Ex.11
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns the given object after deleting its property named as the given string.
 */
+function deleteProp(a,b){
 
+}
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end of this file.
 */
+
 
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
@@ -325,3 +328,18 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ]
+
+
+
+function olderMovie(){
+let lowest = Number.POSITIVE_INFINITY
+let highest = Number.NEGATIVE_INFINITY
+movies.sort((a, b) => a.Year - b.Year)
+    for (let i = 0; i <movies.length;i++) {
+       
+        return movies[i].Year < lowest? `${lowest = "the oldest movies is " +" "+ movies[i].Title  +" from "+  movies[i].Year }`:` ${highest = "the most recent movie released is" + movies[i].Title +" from "+ movies[i].Year}`
+    
+    }
+    
+    }
+console.log(olderMovie())
