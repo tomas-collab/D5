@@ -68,23 +68,36 @@ function splitMe(a){
     
 }
 
-}
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
-
+function deleteOne(a,b){
+    return a===true? b.substring(1) : b.substring(0,b.length -1)
+ }
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs")  => returns "I have  dogs"
 */
+function onlyLetters(a){
+    return a.replace(/\d+/g,'')
+} 
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
+function isThisAnEmail(){
+
+}
 
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
 */
+function whatDayIsToday(){
+    let today = new Day()
+    let day = today.getDay()
+    let daysOfWeeks = ['Sunday','Monday','tuesday', 'Wednsday','Thursday','Friday','Saturday']
+    return daysOfWeeks[day]
+}
 
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
@@ -95,15 +108,38 @@ function splitMe(a){
         sum: 10
         values: [3, 3, 4]
     }
+
+    function dice(a){
+    
+    for(i = 0;i<a.length;i++){
+    return random = Math.floor(Math.random()*(6-1)+1)
+        
+    }
+}
+
 */
 
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
+function howManyDays(date){
 
+}
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
+
+function isTodayMyBirthday(){
+    const now = new Date();
+    const MyBithday = new Date(2022, 3, 25);
+        
+    
+    let untilMybirthday = MyBithday- now;
+    let millisecondsDay = 1000 * 60 * 60 * 24;
+    let daysToMybirthday = Math.ceil(untilMybirthday/ millisecondsDay);
+    return MyBithday === now?'true':'false'
+    
+    }
 
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
