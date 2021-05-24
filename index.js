@@ -108,16 +108,15 @@ function whatDayIsToday(){
         sum: 10
         values: [3, 3, 4]
     }
-
-    function dice(a){
-    
-    for(i = 0;i<a.length;i++){
-    return random = Math.floor(Math.random()*(6-1)+1)
-        
-    }
-}
-
 */
+function rollthedice(a){
+  let x = []
+  for(let i = 0;i<a;i++){
+      random = Math.floor(Math.random()*6)+1
+      x.push(random)
+  }
+  return `${x}  their sum is ${x.reduce((a,b)=> a+b)}`
+}
 
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
