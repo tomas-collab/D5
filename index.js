@@ -121,9 +121,17 @@ function rollthedice(a){
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
-function howManyDays(date){
+function howManyDays(y,m,d){
+  const now = new Date();
+    let date = new Date(y, m, d);
+        
+    
+    let daysDifference = Math.abs(date- now);
+    let millisecondsDay = 1000 * 60 * 60 * 24;
+    return daysleft = Math.ceil(daysDifference/ millisecondsDay)
 
 }
+
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
