@@ -272,7 +272,10 @@ function searchByTitle(a){
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
-
+function removeIndex(a){
+  delete movie[a]
+  return movie
+  }
 // [EXTRAS] JS Advanced
 
 /* Ex.21
