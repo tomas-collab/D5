@@ -181,22 +181,87 @@ function countMovies(){
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
 */
+function onlyTheTitles(){
+  movies.push( "Avengers: Endgame")
 
+}
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this millennium.
 */
+function olderMovie(){
+  let lowest = 3000
+  let highest = 2000
+  let n = 0
+  movies.sort((a, b) => a.Year - b.Year)
+      for (let i = 0; i <movies.length;i++) {
+          if(movies[i].Year <= lowest && movies[i].year >=highest){
+            `${movies[i].Title  +" from "+  movies[i].year }`
+             n++
+           } 
+      }
+      return n
+   }
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
+function getMovieById(a){
+  switch(a){
+      case "tt0120737": console.log(movies[0]); break;
+      case "tt0167260": console.log(movies[1]); break;
+      case "tt0167261": console.log(movies[2]); break;
+      case "tt0399295": console.log(movies[3]); break;
+      case "tt0355702": console.log(movies[4]); break;
+      case "tt0077869": console.log(movies[5]); break;
+      case "tt0100054": console.log(movies[6]); break;
+      case "tt1731697": console.log(movies[7]); break;
+      case "tt0087365": console.log(movies[8]); break;
+      case "tt0057261": console.log(movies[9]); break;
+      case "tt0848228": console.log(movies[10]); break;
+      case "tt4154756": console.log(movies[11]); break;
+      case "tt2395427": console.log(movies[12]); break;
+      case "tt4154796": console.log(movies[13]); break;  
+      default:console.log(`No movie available with id of  ${a}!`)
+  }
+
+}
+  
+
 
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
 */
-
+function sumAllTheYears(){
+  let total = 0;
+  movie.forEach(item => { 
+      total += parseInt(item.year);
+  })
+  return total
+    
+  }
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
+function searchByTitle(a){
+  switch(a){
+      case "The Lord of the Rings: The Fellowship of the Ring": console.log(movies[0]); break;
+      case "The Lord of the Rings: The Return of the King": console.log(movies[1]); break;
+      case "The Lord of the Rings: The Two Towers": console.log(movies[2]); break;
+      case "Lord of War": console.log(movies[3]); break;
+      case "Lords of Dogtown": console.log(movies[4]); break;
+      case "The Lord of the Rings": console.log(movies[5]); break;
+      case "Lord of the Flies": console.log(movies[6]); break;
+      case "The Lords of Salem": console.log(movies[7]); break;
+      case "Greystoke: The Legend of Tarzan, Lord of the Apes": console.log(movies[8]); break;
+      case "Lord of the Flies": console.log(movies[9]); break;
+      case "The Avengers": console.log(movies[10]); break;
+      case "Avengers: Infinity War": console.log(movies[11]); break;
+      case "Avengers: Age of Ultron": console.log(movies[12]); break;
+      case "Avengers: Endgame": console.log(movies[13]); break;  
+      default:console.log(`No movie available with id of  ${a}!`)
+  }
+
+}
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
@@ -347,6 +412,8 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ]
+
+
 
 
 
