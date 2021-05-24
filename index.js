@@ -286,6 +286,18 @@ function removeIndex(a){
   **
   ***
 */
+function halfTree(height) {
+   
+let arr;
+ for (var i = 1; i <= height; i++) {
+     arr = [];
+     for (var j = 1; j <= i; j++) {
+         arr.push('*');            
+     }
+     console.log(arr.join(" ") + "\n");
+ }
+}
+
 
 /* Ex.22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
