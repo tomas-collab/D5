@@ -10,6 +10,8 @@
     - Publish them into your own GitHub account and upload repository link on Eduflow before 16.30 (Berlin Time) 
 */
 
+const { parse } = require("node:path")
+
 //JS Basics
 
 /* Ex.A
@@ -117,7 +119,10 @@ function rollthedice(a){
       x.push(random)
   }
   return `${x}  their sum is ${x.reduce((a,b)=> a+b)}`
+
 }
+
+// /^S+@\S_\.\S+$/.test() -> possible solution
 
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
@@ -155,7 +160,10 @@ function isTodayMyBirthday(){
 /* Ex.11
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns the given object after deleting its property named as the given string.
 */
-function deleteProp(a,b){
+function deleteProp(obj,pro){
+  delete obj[pro]
+  return obj
+
 
 }
 /* Ex.12 
@@ -178,13 +186,10 @@ function olderMovie(){
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
 */
 function countMovies(){
+  return movies.length
+} 
   
-  for(i = 0; i<movies.length;i++){
-      
-  }
-    return sum = i 
-  }
- 
+
 
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
@@ -214,24 +219,11 @@ function olderMovie(){
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
 function getMovieById(a){
-  switch(a){
-      case "tt0120737": console.log(movies[0]); break;
-      case "tt0167260": console.log(movies[1]); break;
-      case "tt0167261": console.log(movies[2]); break;
-      case "tt0399295": console.log(movies[3]); break;
-      case "tt0355702": console.log(movies[4]); break;
-      case "tt0077869": console.log(movies[5]); break;
-      case "tt0100054": console.log(movies[6]); break;
-      case "tt1731697": console.log(movies[7]); break;
-      case "tt0087365": console.log(movies[8]); break;
-      case "tt0057261": console.log(movies[9]); break;
-      case "tt0848228": console.log(movies[10]); break;
-      case "tt4154756": console.log(movies[11]); break;
-      case "tt2395427": console.log(movies[12]); break;
-      case "tt4154796": console.log(movies[13]); break;  
-      default:console.log(`No movie available with id of  ${a}!`)
+  for(let i = 0; i<movies.length;i++){
+    if(movies[i].imdbID === id)
+    return movies[i]
   }
-
+return {}
 }
   
 
@@ -250,24 +242,12 @@ function sumAllTheYears(){
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
-function searchByTitle(a){
-  switch(a){
-      case "The Lord of the Rings: The Fellowship of the Ring": console.log(movies[0]); break;
-      case "The Lord of the Rings: The Return of the King": console.log(movies[1]); break;
-      case "The Lord of the Rings: The Two Towers": console.log(movies[2]); break;
-      case "Lord of War": console.log(movies[3]); break;
-      case "Lords of Dogtown": console.log(movies[4]); break;
-      case "The Lord of the Rings": console.log(movies[5]); break;
-      case "Lord of the Flies": console.log(movies[6]); break;
-      case "The Lords of Salem": console.log(movies[7]); break;
-      case "Greystoke: The Legend of Tarzan, Lord of the Apes": console.log(movies[8]); break;
-      case "Lord of the Flies": console.log(movies[9]); break;
-      case "The Avengers": console.log(movies[10]); break;
-      case "Avengers: Infinity War": console.log(movies[11]); break;
-      case "Avengers: Age of Ultron": console.log(movies[12]); break;
-      case "Avengers: Endgame": console.log(movies[13]); break;  
-      default:console.log(`No movie available with id of  ${a}!`)
-  }
+function searchByTitle(keyword){
+ let result = []
+ for(let i = 0; i<movies.length;i++){
+   if(movies[i].Title.indexOf(keyword) !== -1)
+   result.push(movies[i])
+ }
 
 }
 
@@ -276,13 +256,27 @@ function searchByTitle(a){
     this object should contain an array called "match", made by all the movies which contain the given string in the title,
     and another array "unmatch" with all the remaining ones.
 */
+function searchAndDivide(word){
+  let result = {
+    match:[],
+    unmatch: []
+  }
+  for(let i = 0; i<movies.length;i++){
+    if(movies[i].Title.indexOf(keyword) !== -1)
+    result.match.push(movies[i])
+    else
+    result.unmatch.push(movies[i])
+
+     }
+     return result
+}
 
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
 function removeIndex(a){
-  delete movie[a]
-  return movie
+  delete movies[a]
+  return movies
   }
 // [EXTRAS] JS Advanced
 
